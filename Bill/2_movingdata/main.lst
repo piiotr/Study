@@ -1,0 +1,106 @@
+AARCH64 GAS  main.asm 			page 1
+
+
+   1              	.section .data
+   2 0000 48656C6C 	    msg: .ascii "Hello, ARM64!\n"
+   2      6F2C2041 
+   2      524D3634 
+   2      210A
+   3              	    len = . - msg
+   4 000e 88776655 	    dWordVar:   .dword      0x1122334455667788
+   4      44332211 
+   5 0016 DDCCBBAA 	    wordVar:    .word       0xaabbccdd
+   6 001a 41       	    byteVar:    .byte       'A' // you cant move it into x register, only w is acceptable 
+   7 001b F6       	    sByteVar:   .byte       -10
+   8 001c E703     	    hWordVar:   .hword      999
+   9 001e 00000000 	    dWordVar2:  .dword      0
+   9      00000000 
+  10              	.section .bss
+  11              	.section .text
+  12              	.global _start
+  13              	_start:
+  14 0000 200080D2 	    mov x0, #1     
+  15 0004 21030058 	    ldr x1, =msg 
+  16 0008 42030058 	    ldr x2, =len 
+  17 000c 08088052 	    mov w8, #64 
+  18 0010 010000D4 	    svc #0
+  19              	
+  20              	    // Move some literals or immediate values into registers 
+  21 0014 800C80D2 	    mov     x0,     #100    // Move the decimal value 100 into x0
+  22 0018 012080D2 	    mov     x1,     #0x100  // Move the hexadecimal into x1
+  23              	
+  24              	    // Move some registers values into other registers 
+  25 001c E30300AA 	    mov     x3,     x0
+  26 0020 E40301AA 	    mov     x4,     x1
+  27              	
+  28              	    //Move data from variables into registers 
+  29              	    // 1 Move the address of the variable into a register 
+  30              	    // 2 Dereference that register and put that data into a registers 
+  31              	    // Dereferencing means: take the address that you have for a variable and get the data at that 
+  32              	
+  33 0024 A3020058 	    ldr     x3,     =dWordVar   // Put address of dWordVar into x3
+  34 0028 600040F9 	    ldr     x0,     [x3]
+  35              	
+  36              	    // Move a word into x0 (even it says w0 it is still moved to x0 just like with eax and rax in x
+  37 002c A3020058 	    ldr     x3,     =wordVar    
+  38 0030 600040B9 	    ldr     w0,     [x3]
+  39              	    
+  40              	    // Move a byte into w0
+  41 0034 A3020058 	    ldr     x3,     =byteVar
+  42 0038 60004039 	    ldrb    w0,     [x3]
+  43              	
+  44              	    // Move a signed byte into x0
+  45 003c A3020058 	    ldr     x3,     =sByteVar
+  46 0040 6000C039 	    ldrsb   w0,     [x3]
+  47              	
+  48 0044 A3020058 	    ldr     x3,     =hWordVar
+  49 0048 60004079 	    ldrh    w0,     [x3] // unsigned 
+  50 004c 6000C079 	    ldrsh   w0,     [x3] // signed 
+  51              	    // shb - uzywane tylko w przypadku wartosci byte 
+  52              	
+AARCH64 GAS  main.asm 			page 2
+
+
+  53              	    // move from register to memory 
+  54 0050 83020058 	    ldr     x3,     =dWordVar2
+  55 0054 600000F9 	    str     x0,     [x3] // destination is on the right
+  56              	
+  57              	    // move byte from register to memory
+  58 0058 60000039 	    strb    w0,     [x3]
+  59 005c 60000079 	    strh    w0,     [x3]
+  60              	
+  61              	    // no thing such strsb
+  62              	
+  63              	
+  64              	
+  65              	
+  66              	
+  67              	
+  68              	
+  69              	
+  70              	
+  71              	
+  72 0060 A80B8052 	    mov w8, #93 
+  73 0064 010000D4 	    svc #0
+  74 0068 00000000 	
+  74      00000000 
+  74      0E000000 
+  74      00000000 
+  74      00000000 
+AARCH64 GAS  main.asm 			page 3
+
+
+DEFINED SYMBOLS
+            main.asm:2      .data:0000000000000000 msg
+            main.asm:3      *ABS*:000000000000000e len
+            main.asm:4      .data:000000000000000e dWordVar
+            main.asm:5      .data:0000000000000016 wordVar
+            main.asm:6      .data:000000000000001a byteVar
+            main.asm:7      .data:000000000000001b sByteVar
+            main.asm:8      .data:000000000000001c hWordVar
+            main.asm:9      .data:000000000000001e dWordVar2
+            main.asm:13     .text:0000000000000000 _start
+            main.asm:14     .text:0000000000000000 $x
+            main.asm:74     .text:0000000000000068 $d
+
+NO UNDEFINED SYMBOLS

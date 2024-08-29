@@ -1,0 +1,35 @@
+AARCH64 GAS  main.asm 			page 1
+
+
+   1              	.section .data
+   2 ???? 0200     	    var:    .hword  2
+   3 ???? 01       	    byt:    .byte   1
+   4              	.section .bss
+   5              	.section .text
+   6              	.global _start
+   7              	_start:
+   8 ???? 610080D2 	    mov     x1,     3
+   9 ???? 62000058 	    ldr     x2,     =byt
+  10              	    strb    [w2],   w1
+  11              	
+  12              	    
+  13              	
+  14              	
+  15              	
+  16              	
+  17              	/* syscall exit(int status) */
+  18 ???? A80B8052 	    mov w8, #93 
+  19 ???? 010000D4 	    svc #0
+  20 ???? 00000000 	
+  20      00000000 
+AARCH64 GAS  main.asm 			page 2
+
+
+DEFINED SYMBOLS
+            main.asm:2      .data:0000000000000000 var
+            main.asm:3      .data:0000000000000002 byt
+            main.asm:7      .text:0000000000000000 _start
+            main.asm:8      .text:0000000000000000 $x
+            main.asm:20     .text:0000000000000010 $d
+
+NO UNDEFINED SYMBOLS

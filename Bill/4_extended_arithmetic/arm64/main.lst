@@ -1,0 +1,47 @@
+AARCH64 GAS  main.asm 			page 1
+
+
+   1              	.section .data
+   2              	.section .bss
+   3              	.section .text
+   4              	.global _start
+   5              	
+   6              	_start:
+   7 0000 00008092 	    mov     x0,     0xffffffffffffffff  // first number, lower-half 
+   8 0004 E13F80D2 	    mov     x1,     0x00000000000001ff  // first number, upper-half
+   9              	
+  10 0008 220080D2 	    mov     x2,     0x0000000000000001  // sec number, lower half
+  11 000c 032080D2 	    mov     x3,     0x0000000000000100  // sec number, upper half 
+  12              	
+  13 0010 040002AB 	    adds    x4,     x0, x2  // add lower half of two numbers, setting the carry flag 
+  14 0014 2500039A 	    adc     x5,     x1, x3  // add upper half of two numbers + carry flag 
+  15              	
+  16 0018 070080D2 	    mov     x7,     #0
+  17 001c 820400F1 	    subs    x2,     x4,     #1  // Sub 1 from the lower half x4 into x2 
+  18              	
+  19 0020 A10007DA 	    sbc     x1,     x5,     x7  // Sub 0 from the upper half and the value in the carry
+  20              	
+  21              	
+  22              	
+  23              	
+  24              	
+  25              	
+  26              	
+  27              	
+  28              	    
+  29              	    
+  30              	    
+  31              	    
+  32              	    
+  33 0024 000080D2 	    mov x0, #0 
+  34 0028 A80B8052 	    mov w8, #93 
+  35 002c 010000D4 	    svc #0
+  36              	
+AARCH64 GAS  main.asm 			page 2
+
+
+DEFINED SYMBOLS
+            main.asm:6      .text:0000000000000000 _start
+            main.asm:7      .text:0000000000000000 $x
+
+NO UNDEFINED SYMBOLS

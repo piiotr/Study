@@ -1,0 +1,90 @@
+AARCH64 GAS  main.asm 			page 1
+
+
+   1              	.section .data
+   2 0000 48656C6C 	    msg:    .ascii  "Hello\n"
+   2      6F0A
+   3              	    len = . - msg
+   4              	    
+   5              	    // Integers 
+   6 0006 12       	    aByte:      .byte      18
+   7 0007 FF       	    aByte2:     .byte      0xff
+   8 0008 FFFF     	    aHword:     .hword     0xffff
+   9 000a 1600     	    aHword2:    .hword     22
+  10 000c FFFFFF0F 	    aWord:      .word      0xfffffff
+  11 0010 22000000 	    aDword:     .dword     34
+  11      00000000 
+  12 0018 5467FF00 	    aDword2:    .dword     0xff6754
+  12      00000000 
+  13              	
+  14              	    // Floating points:
+  15 0020 B757     	    float16b:   .float16   123.45
+  16 0022 A2455741 	    float32b:   .float     13.4545
+  17 0026 7B4E0AD4 	    float64b:   .double    123.3434343434
+  17      FAD55E40 
+  18              	
+  19              	    //Strings: 
+  20              	
+  21 002e 4E6F2065 	    someString:     .ascii      "No elo" // not null terminated 
+  21      6C6F
+  22 0034 4E6F2065 	    someString2:    .asciz     "No elo" // null terminated 
+  22      6C6F00
+  23              	
+  24              	    //Arrays: 
+  25 003b 00000000 	    array1:     .skip   50 // an array of 50 bytes 
+  25      00000000 
+  25      00000000 
+  25      00000000 
+  25      00000000 
+  26 006d 0A000000 	    array2:     .word   10, 20, 30, 40 
+  26      14000000 
+  26      1E000000 
+  26      28000000 
+  27 007d 01026103 	    array3:     .byte   1, 2, 'a', 3
+  28              	
+  29              	    
+  30              	
+  31              	
+  32              	
+  33              	
+  34              	.section .bss
+  35              	.section .text
+  36              	.global _start
+  37              	
+  38              	_start:
+  39              	
+  40              	
+  41              	/* syscall exit(int status) */
+  42 0000 000080D2 	    mov x0, #0 
+  43 0004 A80B8052 	    mov w8, #93 
+  44 0008 010000D4 	    svc #0
+AARCH64 GAS  main.asm 			page 2
+
+
+  45              	
+AARCH64 GAS  main.asm 			page 3
+
+
+DEFINED SYMBOLS
+            main.asm:2      .data:0000000000000000 msg
+            main.asm:3      *ABS*:0000000000000006 len
+            main.asm:6      .data:0000000000000006 aByte
+            main.asm:7      .data:0000000000000007 aByte2
+            main.asm:8      .data:0000000000000008 aHword
+            main.asm:9      .data:000000000000000a aHword2
+            main.asm:10     .data:000000000000000c aWord
+            main.asm:11     .data:0000000000000010 aDword
+            main.asm:12     .data:0000000000000018 aDword2
+            main.asm:15     .data:0000000000000020 float16b
+            main.asm:16     .data:0000000000000022 float32b
+            main.asm:17     .data:0000000000000026 float64b
+            main.asm:21     .data:000000000000002e someString
+            main.asm:22     .data:0000000000000034 someString2
+            main.asm:25     .data:000000000000003b array1
+            main.asm:25     .data:000000000000003b $d
+            main.asm:26     .data:000000000000006d array2
+            main.asm:27     .data:000000000000007d array3
+            main.asm:38     .text:0000000000000000 _start
+            main.asm:42     .text:0000000000000000 $x
+
+NO UNDEFINED SYMBOLS
