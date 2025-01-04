@@ -1,0 +1,34 @@
+The most important thing in linux distribution is quality packaging system and support community. 
+Package management is a method of installing and maintaing software on the system. 
+Diferrent distributions use diferrent packaging systems which are not compatible. 
+Most popular are Debian .deb and Red Hat .rpm. 
+package file is compressed collection of program files 
+repositiories consists of packages 
+dependecy is a shared resource/library that program needs to function 
+Low-level package tools handle installing/removing package files 
+High-level package tools perform dependecy resolution
+Debian has dpkg
+RH has rpm 
+Debian high level are apt
+Red Hat high level is dnf 
+Before installation repository needs to be updated and synchronized. Apt has update command, while dnf is doing it automatically 
+Search: apt search, dnf search 
+Install: apt install 
+Install from the file: dpkg (not apt) -i     rpm (not dnf) -i 
+Remove: apt remove, dnf erase (not remove) 
+Update: apt update, apt upgrade, dnf update 
+Update from a file: dpkg -i (the same as install), rpm -U (diferrent from install) 
+List installed packages: dpkg -l rpm -qa 
+Package status: dpkg -s, rpm -q 
+
+dpkg & rpm: 
+    - install from a file 
+    - update from a file 
+    - list installed packages 
+    - package status 
+    - package file identification 
+
+apt & dnf 
+
+
+
