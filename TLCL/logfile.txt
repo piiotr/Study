@@ -1,0 +1,5 @@
+]633;E;ls --color=auto;d5066cc1-ca16-406e-bb13-40636e2b793b]633;Clogfile.txt
+Study
+TEST.txt
+Uni
+Linux

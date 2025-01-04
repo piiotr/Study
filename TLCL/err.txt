@@ -1,0 +1,2 @@
+ls: cannot access 'dd.txt': No such file or directory
+abc.txt

@@ -1,0 +1,11 @@
+ls: cannot access 'fjff/': No such file or directory
+.:
+d2.txt
+data.txt
+errors2.txt
+errors.txt
+new.txt
+test2.txt
+test3.txt
+test_dir
+test.txt

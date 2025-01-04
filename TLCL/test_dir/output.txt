@@ -1,0 +1,6 @@
+total 8
+drwxrwxr-x 2 piotrek piotrek 4096 Dec 21 11:38 .
+drwxrwxr-x 3 piotrek piotrek 4096 Dec 21 11:37 ..
+-rw-rw-r-- 1 piotrek piotrek    0 Dec 21 11:38 file1.txt
+-rw-rw-r-- 1 piotrek piotrek    0 Dec 21 11:38 file2.txt
+-rw-rw-r-- 1 piotrek piotrek    0 Dec 21 11:38 output.txt

@@ -1,0 +1,6 @@
+]633;E;date;76e38ce6-5f72-473c-962d-1aa12ea0e435]633;CThu Dec 26 09:54:00 PM UTC 2024
+piotrek
+Linux
+Study
+sys_rep.txt
+system_report.txt

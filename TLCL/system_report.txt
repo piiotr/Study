@@ -1,0 +1,7 @@
+]633;E;echo "Date and Time: $(date)";76e38ce6-5f72-473c-962d-1aa12ea0e435]633;CDate and Time: Thu Dec 26 10:01:05 PM UTC 2024
+User: piotrek
+Kernel Version: Linux
+Files and Directories:
+Study
+sys_rep.txt
+system_report.txt
