@@ -20,6 +20,8 @@ Update: apt update, apt upgrade, dnf update
 Update from a file: dpkg -i (the same as install), rpm -U (diferrent from install) 
 List installed packages: dpkg -l rpm -qa 
 Package status: dpkg -s, rpm -q 
+Show info: apt show, dnf info 
+File identification: dpkg -S, rpm -qf 
 
 dpkg & rpm: 
     - install from a file 
@@ -29,6 +31,8 @@ dpkg & rpm:
     - package file identification 
 
 apt & dnf 
+    - show info
+
 
 
 

@@ -1,0 +1,48 @@
+RAID - Redundant Array of Independent Disks 
+LVM - Logical Volume Manager 
+mounting - attaching the device to the file system tree 
+linux maintain single file system tree with devices attached at varous point 
+fstab - file system table lists devices / partitions that are mounted at boot time. The file is located in /etc/fstab 
+
+Fields: 
+Device -- Mount point -- filesysytem -- options -- Frequency -- Order 
+
+device - what 
+mount point - where 
+filesystem - where 
+options- usually defualt 
+frequency - when backup 
+order - when check 
+
+mount command: 
+Device -- Mount point -- filesystem (options read/write)
+
+
+To unmount you need superuser privileges 
+umount <device> 
+
+mount points need to be created before mounting a device 
+mount point is a simply a directory 
+it can be an empty folder or folder with content, however this content will not be accessible until device is unmounted 
+
+mounting: 
+
+mount -t vfat /dev/sdc /mnt/flash
+
+-t vfat - filesystem 
+dev/sdc - device
+mnt/flash - mount point 
+
+you cant unmount a device if it's used 
+
+fd - floppy disks
+hd - IDE disks on older systems 
+lp - printers 
+sd* - SCSI disks on modern systems 
+sr* - optical drives 
+
+tail -f /var/log/syslog - checking devices in a realtime 
+the same with journalctl -f 
+
+lsblk - see deviced attached to the system (mountend and unmounted)
+
