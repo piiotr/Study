@@ -1,0 +1,21 @@
+Analiza algorytmów - szukanie najlepszych algorytmów dla zadań komputerowych. 
+    - czy problem mozna rozwiazac
+    - czy jest jakis znany algorytm, który to rozwiaze 
+    - czy jest moze jeszcze lepszy algorytm 
+    - uzasadnienie 
+
+Analiza algorytmu 
+    - poprawnosc semantyczna 
+    - prostota 
+    - czas działania 
+    - wykorzystanie zasobów 
+    - optymalność 
+    - use cases 
+
+Złozonosc obliczeniowa algorytmu definiowana jest jako ilość zasobów potrzebną do jego wykonania - czas działania i wykorzystywana pamięć. 
+
+Na złożoność obliczeniową składa się złożoność pamięciowa oraz czasowa. 
+
+Złożoność pesymistyczna - maksymalna liczba zasobów - najgorszy scenariusz 
+Złożoność oczekiwana - średnia liczba zasobów - typowy scenariusz 
+

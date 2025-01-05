@@ -1,0 +1,9 @@
+Data types: integers, characters, floating point 
+
+compiler reads only first 63 characters of indetifier 
+
+lowercase letters, uppercase letters, digits, underscore 
+C names are case sensitive 
+
+declaration reserves space in memory, assigement puts value into that space
+
